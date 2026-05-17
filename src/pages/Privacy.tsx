@@ -27,7 +27,7 @@ For questions regarding this policy, please contact us at:
 **Luxe Collection, LLC**
 1209 MOUNTAIN ROAD PL NE STE R
 Albuquerque, NM 87110
-Email: support@luxecollection.com
+Email: Marconist789@gmail.com
 `;
 
 export default function Privacy() {

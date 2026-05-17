@@ -161,6 +161,49 @@ export default function Home() {
          </div>
       </section>
 
+      {/* Newsletter Section */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-x-6 top-12 bottom-12 border border-luxe-gold/5 pointer-events-none hidden md:block" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.5em] text-luxe-gold font-bold mb-8">Exclusive Access</p>
+              <h2 className="text-5xl md:text-7xl italic font-serif text-luxe-ink mb-8">Sign Up for the <br /> <span className="text-luxe-gold font-normal">Inner Circle.</span></h2>
+              <p className="text-xl text-luxe-ink/60 font-light leading-relaxed max-w-lg">
+                Receive prioritized notifications for signature releases, structural design updates, and professional archival insights.
+              </p>
+            </div>
+            <div className="bg-luxe-paper p-12 md:p-16 rounded-[4rem] border border-luxe-gold/10">
+              <form className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-3">
+                    <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Full Name</label>
+                    <input type="text" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="Your Name" />
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Email Address</label>
+                    <input type="email" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="email@example.com" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Phone Number</label>
+                  <input type="tel" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="+1 (000) 000-0000" />
+                </div>
+                <div className="flex items-start space-x-4">
+                  <input type="checkbox" id="home-consent" className="mt-1 accent-luxe-gold" required />
+                  <label htmlFor="home-consent" className="text-[9px] uppercase tracking-widest text-luxe-ink/60 leading-relaxed font-bold cursor-pointer">
+                    I consent to receive occasional boutiques updates and structural notifications from Luxe Collection, LLC via phone or email.
+                  </label>
+                </div>
+                <button type="button" className="w-full bg-luxe-ink text-white py-6 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-luxe-gold transition-all rounded-full shadow-lg">
+                  Join The Archive
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-48 bg-luxe-ink text-luxe-paper relative overflow-hidden">
         <div className="absolute top-0 right-0 w-2/3 h-full overflow-hidden opacity-30">

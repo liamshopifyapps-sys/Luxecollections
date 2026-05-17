@@ -119,9 +119,14 @@ export default function Cart() {
               </div>
             </div>
 
-            <button className="w-full bg-luxe-ink text-luxe-paper py-6 text-xs uppercase tracking-[0.3em] hover:bg-luxe-ink/90 transition-colors mb-6">
+            <a 
+              href="https://wa.me/14254772761" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block w-full bg-luxe-ink text-luxe-paper py-6 text-xs uppercase tracking-[0.3em] hover:bg-luxe-gold hover:text-white transition-all mb-6 text-center font-bold"
+            >
               Inquire to Purchase
-            </button>
+            </a>
             <p className="text-[10px] text-center opacity-30 leading-relaxed uppercase tracking-widest">
               Pricing inclusive of white-glove <br /> architectural delivery.
             </p>
