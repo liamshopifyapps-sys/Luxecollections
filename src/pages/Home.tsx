@@ -1,140 +1,192 @@
 import { motion } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, Globe, Star, Award, MapPin, Mail, Phone, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
+    <div className="bg-luxe-paper">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center">
+      <section className="relative h-screen flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2070&auto=format&fit=crop" 
-            alt="Luxe Hero" 
-            className="w-full h-full object-cover grayscale-[20%]"
+            alt="Luxury Fashion Hero" 
+            className="w-full h-full object-cover opacity-80 grayscale-[20%]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-luxe-ink/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/20 to-transparent"></div>
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-2xl">
-            <motion.p 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-xs uppercase tracking-[0.5em] mb-6 text-luxe-paper/80"
-            >
-              Defining Modern Elegance
-            </motion.p>
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-6xl md:text-8xl mb-8 text-luxe-paper"
-            >
-              The Architecture <br /> of Fashion
-            </motion.h1>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <Link to="/collections" className="inline-flex items-center space-x-4 bg-luxe-paper text-luxe-ink px-8 py-5 text-xs uppercase tracking-widest hover:bg-luxe-paper/90 transition-colors">
-                <span>Explore the Archive</span>
-                <ArrowRight size={16} />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
-      {/* Intro Section */}
-      <section className="py-32 bg-luxe-paper">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-          <div className="space-y-12">
-            <h2 className="text-5xl md:text-6xl leading-[1.1]">
-              Refined architectural approach to <span className="italic">modern style.</span>
-            </h2>
-            <p className="text-lg text-luxe-ink/70 leading-relaxed max-w-lg">
-              At Luxe Collections, we believe clothing should be an extension of the space you inhabit. Our pieces are designed with architectural precision, focusing on form, silhouette, and the silent language of quality.
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full h-full flex items-center">
+          <div className="absolute inset-x-6 top-12 bottom-12 border border-luxe-gold/20 pointer-events-none hidden md:block" />
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="max-w-3xl space-y-10"
+          >
+            <p className="text-[10px] uppercase tracking-[0.8em] text-luxe-gold font-bold">Luxe Collection • USA Operations</p>
+            <h1 className="text-7xl md:text-[9rem] leading-[0.85] font-serif tracking-tighter text-luxe-ink">
+              Quiet <br /> <span className="italic font-normal text-luxe-gold">Luxury.</span>
+            </h1>
+            <p className="text-xl text-luxe-ink/60 font-light max-w-lg leading-relaxed">
+              Curating elevated essentials with architectural precision. Experience the intersection of signature style and structural integrity.
             </p>
-            <div className="pt-4">
-              <Link to="/about" className="text-xs uppercase tracking-widest border-b border-luxe-ink/30 pb-2 hover:border-luxe-ink transition-colors pb-1">
-                Our Philosophy
+            <div className="flex items-center space-x-12 pt-8">
+              <Link to="/collections" className="group flex items-center space-x-6">
+                <span className="text-[11px] uppercase tracking-[0.4em] font-bold text-luxe-gold">Explore Archive</span>
+                <div className="w-16 h-16 rounded-full border border-luxe-gold/30 flex items-center justify-center group-hover:bg-luxe-gold group-hover:text-white transition-all">
+                  <ArrowRight size={20} />
+                </div>
               </Link>
             </div>
-          </div>
-          <div className="relative">
-             <div className="aspect-[3/4] overflow-hidden rounded-[2rem]">
-                <img 
-                  src="https://images.unsplash.com/photo-1539109132374-348214a3c26b?q=80&w=1974&auto=format&fit=crop" 
-                  alt="Style detail" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                  referrerPolicy="no-referrer"
-                />
-             </div>
-             <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-luxe-accent p-8 rounded-full flex items-center justify-center text-center text-luxe-paper shadow-2xl">
-                <p className="text-[10px] uppercase tracking-widest leading-tight">Handcrafted <br /> with <br /> Care</p>
-             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Signature Teaser */}
-      <section className="py-32 border-t border-luxe-ink/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
-            <h2 className="text-5xl">The Signature Archive</h2>
-            <Link to="/collections" className="text-xs uppercase tracking-widest opacity-60 hover:opacity-100 transition-opacity">
-              View All Pieces
-            </Link>
+      {/* Trust & Legitimacy Bar */}
+      <section className="py-12 bg-luxe-ink border-y border-luxe-gold/20">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { icon: <ShieldCheck size={20} />, text: "EIN REGISTERED LLC" },
+            { icon: <Globe size={20} />, text: "ALBUQUERQUE, NM HQ" },
+            { icon: <Award size={20} />, text: "AUTHENTICITY ASSURED" },
+            { icon: <Star size={20} />, text: "PREMIUM CONCIERGE" }
+          ].map((item, i) => (
+            <div key={i} className="flex items-center justify-center space-x-4 text-luxe-paper/60 border-r last:border-0 border-luxe-paper/10 px-4">
+              <span className="text-luxe-gold">{item.icon}</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-center">{item.text}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Featured Collection */}
+      <section className="py-32 px-6 bg-white overflow-hidden border-b border-luxe-beige relative">
+        <div className="absolute inset-x-6 top-12 bottom-12 border border-luxe-gold/10 pointer-events-none hidden md:block" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-12">
+            <div className="space-y-6">
+              <p className="text-[10px] uppercase tracking-[0.5em] text-luxe-gold font-bold text-center md:text-left">Curated Archive</p>
+              <h2 className="text-6xl md:text-8xl italic text-center md:text-left text-luxe-ink">The Signature <br /> <span className="text-luxe-gold font-normal">Essentials</span></h2>
+            </div>
+            <Link to="/collections" className="text-[11px] uppercase tracking-[0.3em] border-b-2 border-luxe-gold pb-2 hover:text-luxe-gold transition-colors font-bold">View Full Archive</Link>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {[
               { id: 1, name: "Architectural Blazer", price: "$495", image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2080&auto=format&fit=crop" },
               { id: 2, name: "Silk Column Dress", price: "$620", image: "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?q=80&w=1974&auto=format&fit=crop" },
-              { id: 3, name: "Merino Wool Scarf", price: "$185", image: "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=1974&auto=format&fit=crop" }
+              { id: 5, name: "Sculptural Trench", price: "$890", image: "https://images.unsplash.com/photo-1544022613-e87ce7526ed1?q=80&w=1974&auto=format&fit=crop" }
             ].map((product) => (
               <motion.div 
                 key={product.id}
-                whileHover={{ y: -10 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 className="group cursor-pointer"
               >
-                <div className="aspect-[4/5] bg-luxe-ink/5 overflow-hidden mb-6 rounded-lg">
-                  <img 
-                    src={product.image} 
-                    alt={product.name} 
-                    className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                <h3 className="text-xl mb-1">{product.name}</h3>
-                <p className="text-xs uppercase tracking-wider opacity-60">{product.price}</p>
+                <Link to={`/product/${product.id}`}>
+                  <div className="aspect-[4/5] bg-luxe-beige overflow-hidden mb-10 rounded-[3rem] relative shadow-lg">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-luxe-ink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                       <div className="bg-white text-luxe-ink px-8 py-4 rounded-full text-[10px] uppercase tracking-widest shadow-2xl font-bold">
+                          Discover Piece
+                       </div>
+                    </div>
+                  </div>
+                  <h3 className="text-4xl mb-3 group-hover:text-luxe-gold transition-colors text-luxe-ink">{product.name}</h3>
+                  <p className="text-[11px] uppercase tracking-[0.4em] text-luxe-gold font-bold">{product.price}</p>
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AI Teaser */}
-      <section className="py-24 bg-luxe-ink text-luxe-paper relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full opacity-20 pointer-events-none">
-          <div className="w-full h-full bg-gradient-to-l from-luxe-paper/20 to-transparent" />
-        </div>
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center relative z-10">
-          <div className="inline-block px-4 py-2 border border-luxe-paper/20 rounded-full mb-8">
-            <span className="text-[10px] uppercase tracking-[0.3em]">AI-Powered Personalized Archive</span>
+      {/* Why Choose Section */}
+      <section className="py-40 bg-luxe-paper overflow-hidden relative">
+        <div className="absolute inset-x-6 top-12 bottom-12 border border-luxe-gold/20 pointer-events-none hidden md:block" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+            <div className="lg:col-span-5 space-y-12">
+               <p className="text-[10px] uppercase tracking-[0.5em] text-luxe-gold font-bold">Business Legitimacy</p>
+               <h2 className="text-5xl md:text-8xl italic leading-tight text-luxe-ink">Professional <br /> <span className="text-luxe-gold font-normal">Integrity.</span></h2>
+               <p className="text-2xl text-luxe-ink/60 font-light leading-relaxed">
+                 Luxe Collection, LLC is a registered fashion business serving the United States with a commitment to quality, style, and total customer satisfaction. We operate with structural honesty from our Albuquerque studio.
+               </p>
+               <div className="space-y-10 pt-8">
+                  {[
+                    "EIN Registered Business Entity (NM, USA)",
+                    "Albuquerque Based Operations & Logistics",
+                    "Secure SSL-Encrypted Merchant Processing",
+                    "Authenticity Certification Included with All Pieces"
+                  ].map((benefit, i) => (
+                    <div key={i} className="flex items-center space-x-8">
+                       <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-luxe-gold shadow-sm border border-luxe-gold/10">
+                          <ShieldCheck size={20} />
+                       </div>
+                       <span className="text-[11px] uppercase tracking-[0.2em] font-bold opacity-70 leading-relaxed">{benefit}</span>
+                    </div>
+                  ))}
+               </div>
+            </div>
+            <div className="lg:col-span-7 aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-[5rem] shadow-2xl relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1441984969233-389a7315203e?q=80&w=2070&auto=format&fit=crop" 
+                  alt="Professional Workspace" 
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-luxe-gold/10 mix-blend-overlay"></div>
+            </div>
           </div>
-          <h2 className="text-5xl md:text-7xl mb-12 max-w-4xl font-light">
-            An Archive Crafted <br /> <span className="italic">Just for You.</span>
-          </h2>
-          <p className="text-luxe-paper/60 max-w-xl text-lg mb-12 leading-relaxed">
-            Our AI stylist understands your aesthetic blueprints. Curating a personalized selection of signature pieces that harmonize with your existing wardrobe.
-          </p>
-          <Link to="/collections" className="bg-luxe-paper text-luxe-ink px-10 py-5 text-xs uppercase tracking-[0.2em] hover:bg-luxe-paper/90 transition-colors">
-            Access My Stylist
-          </Link>
+        </div>
+      </section>
+
+      {/* Customer Trust Section */}
+      <section className="py-24 bg-white border-y border-luxe-beige">
+         <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-wrap items-center justify-center gap-24 opacity-30 grayscale pointer-events-none">
+               <span className="text-xs uppercase tracking-[1em] font-bold">VOGUE</span>
+               <span className="text-xs uppercase tracking-[1em] font-bold">HARPER'S</span>
+               <span className="text-xs uppercase tracking-[1em] font-bold">ELLE</span>
+               <span className="text-xs uppercase tracking-[1em] font-bold">AD</span>
+            </div>
+         </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-48 bg-luxe-ink text-luxe-paper relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-2/3 h-full overflow-hidden opacity-30">
+          <img 
+            src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=2070&auto=format&fit=crop" 
+            alt="Abstract Fashion" 
+            className="w-full h-full object-cover grayscale"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl space-y-12">
+            <h2 className="text-6xl md:text-9xl italic font-light leading-none">Elevated by <br /> <span className="text-luxe-gold font-normal">Definition.</span></h2>
+            <p className="text-2xl text-luxe-paper/60 font-light leading-relaxed max-w-xl">
+              Join the guild of sophisticated collectors. Experience the gold standard of professional fashion curation today.
+            </p>
+            <div className="flex flex-wrap gap-8 pt-6">
+              <Link to="/collections" className="bg-luxe-gold text-white px-16 py-8 text-[11px] uppercase tracking-[0.4em] hover:bg-white hover:text-luxe-ink transition-all font-bold shadow-[0_20px_50px_rgba(197,160,89,0.3)]">
+                Enter The Archive
+              </Link>
+              <Link to="/contact" className="border border-luxe-paper/20 text-luxe-paper px-16 py-8 text-[11px] uppercase tracking-[0.4em] hover:bg-luxe-paper hover:text-luxe-ink transition-all font-bold">
+                Contact Office
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

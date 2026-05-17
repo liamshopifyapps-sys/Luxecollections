@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", serif;
+  --font-serif: "Playfair Display", serif;
   
-  --color-luxe-paper: #f5f2ed;
-  --color-luxe-ink: #1a1a1a;
-  --color-luxe-accent: #5A5A40;
+  --color-luxe-paper: #F9F7F2;
+  --color-luxe-ink: #111111;
+  --color-luxe-gold: #C5A059;
+  --color-luxe-beige: #E5E2DD;
+  --color-luxe-accent: #2D2D2A;
 }
 
 @layer base {
@@ -16,15 +18,17 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-light tracking-tight;
+    @apply font-serif font-normal tracking-tight;
   }
 }
 
 .markdown-body {
-  @apply space-y-4;
+  @apply space-y-6;
 }
 
-.markdown-body h1 { @apply text-3xl font-light mb-4; }
-.markdown-body h2 { @apply text-2xl font-light mt-8 mb-4; }
-.markdown-body p { @apply text-luxe-ink/80 leading-relaxed; }
-.markdown-body ul { @apply list-disc pl-5 space-y-2; }
+.markdown-body h1 { @apply text-4xl font-normal mb-6 text-luxe-ink border-b border-luxe-beige pb-4; }
+.markdown-body h2 { @apply text-2xl font-normal mt-10 mb-4 text-luxe-ink; }
+.markdown-body h3 { @apply text-xl font-medium mt-6 mb-2 text-luxe-gold; }
+.markdown-body p { @apply text-luxe-ink/80 leading-relaxed text-sm; }
+.markdown-body ul { @apply list-disc pl-6 space-y-3 text-sm text-luxe-ink/80; }
+.markdown-body strong { @apply text-luxe-ink font-semibold; }

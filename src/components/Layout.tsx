@@ -8,7 +8,11 @@ export default function Layout() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      {/* Page Frame */}
+      <div className="fixed inset-0 border-[12px] border-white z-50 pointer-events-none hidden md:block" />
+      <div className="fixed inset-0 border border-luxe-gold/10 z-[51] pointer-events-none m-[12px] hidden md:block" />
+      
       <Navbar />
       <main className="flex-grow pt-20">
         <AnimatePresence mode="wait">

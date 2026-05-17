@@ -1,6 +1,8 @@
 {
-  "name": "Luxe Collections",
-  "description": "A refined architectural approach to modern fashion. Elevated essentials, quiet luxury, and AI-crafted signature pieces with a personalized boutique archive.",
+  "name": "Luxe Collection",
+  "description": "A premium architectural approach to modern fashion. Elevated essentials, quiet luxury, and signature collections curated for the sophisticated silhouette.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

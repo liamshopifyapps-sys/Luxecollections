@@ -3,48 +3,46 @@ import { motion } from "motion/react";
 export default function About() {
   return (
     <div className="bg-luxe-paper py-32 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-xs uppercase tracking-[0.5em] mb-12 opacity-50"
-        >Our Story</motion.p>
+      <div className="max-w-5xl mx-auto">
+        <p className="text-xs uppercase tracking-[0.5em] mb-12 opacity-50 text-luxe-gold">The Fashion House</p>
         
-        <h1 className="text-6xl md:text-8xl mb-24 leading-none">
-          Elegance is <br /> <span className="italic">the silence</span> <br /> between notes.
+        <h1 className="text-6xl md:text-9xl mb-24 leading-none text-luxe-ink">
+          Authentic <br /> <span className="italic text-luxe-gold">Architecture</span> <br /> in Style.
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-          <div className="space-y-12 text-lg text-luxe-ink/80 leading-relaxed">
+          <div className="space-y-12 text-lg text-luxe-ink/80 leading-relaxed bg-white p-12 rounded-[3rem] border border-luxe-beige">
+            <h2 className="text-3xl text-luxe-ink">Our Business Identity</h2>
             <p>
-              Luxe Collections is a fashion brand operated by Luxe Collections LLC. We are committed to delivering stylish, high-quality clothing to customers while ensuring a seamless and secure shopping experience.
+              Luxe Collection is a premier fashion brand operated by <strong>Luxe Collection, LLC</strong>, a registered entity based in the United States. Our headquarters are located in Albuquerque, New Mexico, where we curate signature collections for a global audience.
             </p>
             <p>
-              Our mission is to combine elegance with affordability, offering fashion that fits every lifestyle. We believe that true luxury isn't about being noticed, but about the feeling of being in a space that is authentically your own.
+              As an EIN-registered business, we are committed to professional excellence, legal transparency, and providing a secure environment for our customers.
             </p>
           </div>
-          <div className="space-y-12 text-lg text-luxe-ink/80 leading-relaxed">
+          <div className="space-y-12 text-lg text-luxe-ink/80 leading-relaxed pt-12">
+             <h2 className="text-3xl text-luxe-ink">Our Mission</h2>
              <p>
-              Founded on the principles of architectural precision and quiet luxury, we focus on elevated essentials that serve as the foundation of a modern wardrobe.
+              Our mission is to combine timeless elegance with high-quality craftsmanship, offering fashion that serves the modern lifestyle with architectural precision.
             </p>
             <p>
-              Whether you’re shopping for everyday wear or special occasions, our collection is crafted to meet modern fashion needs with a refined, timeless aesthetic.
+              We believe in "Quiet Luxury"—the idea that true style doesn't scream for attention, but resonates through the silent language of quality fabrics and refined silhouettes. Every piece in our archive is selected to meet the highest standards of modern fashion.
             </p>
           </div>
         </div>
 
-        <div className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-luxe-ink/10 pt-24 text-center md:text-left">
-          <div>
-            <h4 className="text-xs uppercase tracking-widest mb-6 opacity-40">The Quality</h4>
-            <p className="text-sm opacity-70 leading-relaxed">We source only the finest fabrics, ensuring each piece lasts as a staple in your collection for years.</p>
+        <div className="mt-40 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-luxe-beige pt-24">
+          <div className="bg-white p-10 rounded-2xl border border-luxe-beige">
+            <h4 className="text-xs uppercase tracking-widest mb-6 text-luxe-gold font-bold">USA Operations</h4>
+            <p className="text-sm opacity-70 leading-relaxed">Headquartered in Albuquerque, NM, we manage all design and logistics with American standards of excellence.</p>
           </div>
-          <div>
-            <h4 className="text-xs uppercase tracking-widest mb-6 opacity-40">The Precision</h4>
-            <p className="text-sm opacity-70 leading-relaxed">Every silhouette is engineered with an architectural eye for balance and form.</p>
+          <div className="bg-white p-10 rounded-2xl border border-luxe-beige">
+            <h4 className="text-xs uppercase tracking-widest mb-6 text-luxe-gold font-bold">Quality Guarantee</h4>
+            <p className="text-sm opacity-70 leading-relaxed">Each archive piece undergoes a rigorous structural inspection before being certified for our boutique.</p>
           </div>
-          <div>
-            <h4 className="text-xs uppercase tracking-widest mb-6 opacity-40">The Ethics</h4>
-            <p className="text-sm opacity-70 leading-relaxed">Transparency is luxury. We operate with structural integrity from sourcing to shipping.</p>
+          <div className="bg-white p-10 rounded-2xl border border-luxe-beige">
+            <h4 className="text-xs uppercase tracking-widest mb-6 text-luxe-gold font-bold">Trusted Service</h4>
+            <p className="text-sm opacity-70 leading-relaxed">Secure transactions, white-glove delivery, and proactive customer support define our professional relationship with you.</p>
           </div>
         </div>
       </div>
