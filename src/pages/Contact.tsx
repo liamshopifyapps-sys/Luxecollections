@@ -35,7 +35,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-widest opacity-40 mb-2 font-bold">Email Inquiries</p>
-                <a href="mailto:Marconist789@gmail.com" className="text-lg text-luxe-ink/80 hover:text-luxe-gold transition-colors">Marconist789@gmail.com</a>
+                <a href="mailto:support@luxecollection.online" className="text-lg text-luxe-ink/80 hover:text-luxe-gold transition-colors">support@luxecollection.online</a>
               </div>
             </div>
 
