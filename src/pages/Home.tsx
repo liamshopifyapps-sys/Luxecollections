@@ -1,10 +1,20 @@
-import { motion } from "motion/react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, ShieldCheck, Globe, Star, Award, MapPin, Mail, Phone, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    // Directly trigger mailto in a new window or current frame
+    window.location.href = "mailto:support@luxecollection.online";
+  };
+
   return (
-    <div className="bg-luxe-paper">
+    <div className="bg-luxe-paper text-luxe-ink">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
@@ -174,31 +184,59 @@ export default function Home() {
               </p>
             </div>
             <div className="bg-luxe-paper p-12 md:p-16 rounded-[4rem] border border-luxe-gold/10">
-              <form className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                    <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Full Name</label>
-                    <input type="text" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="Your Name" />
-                  </div>
-                  <div className="space-y-3">
-                    <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Email Address</label>
-                    <input type="email" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="email@example.com" />
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Phone Number</label>
-                  <input type="tel" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="+1 (000) 000-0000" />
-                </div>
-                <div className="flex items-start space-x-4">
-                  <input type="checkbox" id="home-consent" className="mt-1 accent-luxe-gold" required />
-                  <label htmlFor="home-consent" className="text-[9px] uppercase tracking-widest text-luxe-ink/60 leading-relaxed font-bold cursor-pointer">
-                    I consent to receive occasional boutiques updates and structural notifications from Luxe Collection, LLC via phone or email.
-                  </label>
-                </div>
-                <button type="button" className="w-full bg-luxe-ink text-white py-6 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-luxe-gold transition-all rounded-full shadow-lg">
-                  Join The Archive
-                </button>
-              </form>
+              <AnimatePresence mode="wait">
+                {!isSubmitted ? (
+                  <motion.form 
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onSubmit={handleSubmit}
+                    className="space-y-8"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Full Name</label>
+                        <input required type="text" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="Your Name" />
+                      </div>
+                      <div className="space-y-3">
+                        <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Email Address</label>
+                        <input required type="email" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="email@example.com" />
+                      </div>
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[9px] uppercase tracking-widest font-bold opacity-40">Phone Number</label>
+                      <input required type="tel" className="w-full bg-transparent border-b border-luxe-gold/20 py-3 focus:border-luxe-gold outline-none transition-colors text-sm" placeholder="+1 (000) 000-0000" />
+                    </div>
+                    <div className="flex items-start space-x-4">
+                      <input type="checkbox" id="home-consent" className="mt-1 accent-luxe-gold" required />
+                      <label htmlFor="home-consent" className="text-[9px] uppercase tracking-widest text-luxe-ink/60 leading-relaxed font-bold cursor-pointer">
+                        I consent to receive occasional boutiques updates and structural notifications from Luxe Collection, LLC via phone or email.
+                      </label>
+                    </div>
+                    <button type="submit" className="w-full bg-luxe-ink text-white py-6 text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-luxe-gold transition-all rounded-full shadow-lg text-center">
+                      Join The Archive
+                    </button>
+                  </motion.form>
+                ) : (
+                  <motion.div 
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center space-y-8 py-12"
+                  >
+                    <div className="w-20 h-20 bg-luxe-gold/10 rounded-full flex items-center justify-center mx-auto text-luxe-gold">
+                       <svg width={32} height={32} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div className="space-y-4">
+                      <h3 className="text-3xl italic font-serif">Welcome to the Archive</h3>
+                      <p className="text-sm text-luxe-ink/60 uppercase tracking-widest leading-relaxed">
+                        Your structural profile has been registered. <br /> Check your email client to finalize connection.
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
